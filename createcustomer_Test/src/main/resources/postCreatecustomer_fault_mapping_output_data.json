@@ -1,0 +1,7 @@
+{
+	"error": "Validation error",
+	"details": [
+		"something went wrong",
+		"something else went wrong"
+	]
+}

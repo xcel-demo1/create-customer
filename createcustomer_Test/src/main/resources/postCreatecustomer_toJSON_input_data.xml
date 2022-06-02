@@ -1,0 +1,5 @@
+<out:customerDetailsResponse
+	xmlns:out="http://ibm.com/CustomerDetails/">
+	<out:status>success</out:status>
+	<out:customer_id>55ed3857-0f19-4250-a36f-de42f2db96b2</out:customer_id>
+</out:customerDetailsResponse>

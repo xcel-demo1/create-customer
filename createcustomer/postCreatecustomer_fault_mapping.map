@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/JsonDomainMsg.xsd" var="var"/>
+    <output derivedFrom="MB:JSON_schema_in_swagger_document" path="/openapi.json" var="var1"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/iib/msl/json"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="postCreatecustomer_fault_mapping">
+        <input namespace="http://schemas.xmlsoap.org/soap/envelope/" path="mb:msg(Fault,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_Fault"/>
+        <output namespace="http://www.ibm.com/iib/msl/json" path="$var/mb:msg(JSON,assembly,JSON,Properties)" var="ComIbmMessageAssembly_JSON">
+            <cast derivedFrom="MB:JSON_operation_response" path="$ComIbmMessageAssembly_JSON/JSON/Data/type('anyType')" qualifier="{http://www.ibm.com/iib/msl/json}fault" ref="var1"/>
+        </output>
+        <move>
+            <input path="$ComIbmMessageAssembly_Fault/Properties"/>
+            <output path="$ComIbmMessageAssembly_JSON/Properties"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_Fault/Fault/faultstring/text()"/>
+            <output path="$ComIbmMessageAssembly_JSON/JSON/spath('Data',2)/error"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_Fault/Fault/detail/any"/>
+            <output path="$ComIbmMessageAssembly_JSON/JSON/spath('Data',2)/details/Item"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,15 @@
+{
+  "service_header": {
+    "brand": "ibm"
+  },
+  "personal_details": {
+    "name_details": {
+      "first_name": "John",
+      "last_name": "Doe"
+    },
+    "contact_details": {
+      "phone": "777-7777",
+      "address": "123 Main Street"
+    }
+  }
+}

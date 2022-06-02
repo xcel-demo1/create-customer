@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "createcustomerrestcallingws",
+    "description": "createcustomerrestcallingws",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/createcustomerrestcallingws/v1"
+    }
+  ],
+  "paths": {
+    "/createcustomer": {
+      "post": {
+        "description": "Crate a customer representation",
+        "operationId": "postCreatecustomer",
+        "requestBody": {
+          "description": "The request body for the operation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/customer_details"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The operation was successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/customer_details_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The operation was not successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/fault"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "customer_details_response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "customerId": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          }
+        }
+      },
+      "customer_details": {
+        "type": "object",
+        "properties": {
+          "service_header": {
+            "type": "object",
+            "properties": {
+              "brand": {
+                "type": "string"
+              }
+            }
+          },
+          "personal_details": {
+            "type": "object",
+            "properties": {
+              "name_details": {
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "contact_details": {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "fault": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

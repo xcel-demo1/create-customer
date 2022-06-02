@@ -1,0 +1,18 @@
+<out:customerDetailsRequest
+	xmlns:out="http://ibm.com/CustomerDetails/">
+	<out:customer_details>
+		<out:service_header>
+			<out:brand>ibm</out:brand>
+		</out:service_header>
+		<out:personal_details>
+			<out:name_details>
+				<out:first_name>John</out:first_name>
+				<out:last_name>Doe</out:last_name>
+			</out:name_details>
+			<out:contact_details>
+				<out:phone>777-7777</out:phone>
+				<out:address>123 Main Street</out:address>
+			</out:contact_details>
+		</out:personal_details>
+	</out:customer_details>
+</out:customerDetailsRequest>

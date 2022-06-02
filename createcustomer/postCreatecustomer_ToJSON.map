@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/customerDetails_InlineSchema1.xsd"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/JsonDomainMsg.xsd" var="var"/>
+    <output derivedFrom="MB:JSON_schema_in_swagger_document" path="/openapi.json" var="var1"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://ibm.com/CustomerDetails/"/>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/iib/msl/json"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="postCreatecustomer_ToJSON">
+        <input namespace="http://ibm.com/CustomerDetails/" path="mb:msg(customerDetailsResponse,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_customerDetailsResponse"/>
+        <output namespace="http://www.ibm.com/iib/msl/json" path="$var/mb:msg(JSON,assembly,JSON,Properties)" var="ComIbmMessageAssembly_JSON">
+            <cast derivedFrom="MB:JSON_operation_response" path="$ComIbmMessageAssembly_JSON/JSON/Data/type('anyType')" qualifier="{http://www.ibm.com/iib/msl/json}customer_details_response" ref="var1"/>
+        </output>
+        <move>
+            <input path="$ComIbmMessageAssembly_customerDetailsResponse/Properties"/>
+            <output path="$ComIbmMessageAssembly_JSON/Properties"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_customerDetailsResponse/customerDetailsResponse/status"/>
+            <output path="$ComIbmMessageAssembly_JSON/JSON/spath('Data',2)/status"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_customerDetailsResponse/customerDetailsResponse/customer_id"/>
+            <output path="$ComIbmMessageAssembly_JSON/JSON/spath('Data',2)/customerId"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

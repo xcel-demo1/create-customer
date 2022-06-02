@@ -1,0 +1,10 @@
+<Fault>
+	<faultstring xml:lang="en">Validation error</faultstring>
+	<detail>
+		<spring-ws:ValidationError
+			xmlns:spring-ws="http://springframework.org/spring-ws">something went wrong</spring-ws:ValidationError>
+		<spring-ws:ValidationError
+			xmlns:spring-ws="http://springframework.org/spring-ws">something else went wrong</spring-ws:ValidationError>
+	</detail>
+
+</Fault>
