@@ -4,6 +4,7 @@ integrationServer:
     - createcustomer
     - createcustomerJava
   applicationName: createcustomerrestcallingws
+  testProject: createcustomer_Test
   releaseName: create-customer-details-rest
   license:
     license: L-KSBM-C37J2R
