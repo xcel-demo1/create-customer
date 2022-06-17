@@ -64,7 +64,7 @@ public class CreateCustomerPostCreateCustomerJsonToSoapTest {
 		assertThat(nodeSpy, nodeCallCountIs(1));
 
 		// Assert the terminal propagate count for the message
-		assertThat(nodeSpy, terminalPropagateCountIs("out", 10));
+		assertThat(nodeSpy, terminalPropagateCountIs("out", 1));
 
 		// Compare Output Message 1 at output terminal out
 
