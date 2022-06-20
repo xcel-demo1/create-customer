@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Integration Test Library"/>
+	<classpathentry kind="lib" path="create-meta-6.0.1.jar"/>
+	<classpathentry kind="lib" path="cucumber-core-7.0.0.jar"/>
+	<classpathentry kind="lib" path="cucumber-expressions-13.0.1.jar"/>
+	<classpathentry kind="lib" path="cucumber-gherkin-7.0.0.jar"/>
+	<classpathentry kind="lib" path="cucumber-gherkin-messages-7.0.0.jar"/>
+	<classpathentry kind="lib" path="cucumber-java-7.0.0.jar"/>
+	<classpathentry kind="lib" path="cucumber-junit-platform-engine-7.0.0.jar"/>
+	<classpathentry kind="lib" path="cucumber-plugin-7.0.0.jar"/>
+	<classpathentry kind="lib" path="datatable-7.0.0.jar"/>
+	<classpathentry kind="lib" path="docstring-7.0.0.jar"/>
+	<classpathentry kind="lib" path="messages-17.1.1.jar"/>
+	<classpathentry kind="lib" path="tag-expressions-4.0.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageAssembly>
+   <message iib:injectable="true" iib:parser="WSRoot" xmlns:iib="http://com.ibm.iib/lt/1.0">
+      <Properties iib:parser="WSPROPERTYPARSER">
+         <MessageSet iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <MessageType iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <MessageFormat iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <Encoding iib:valueType="INTEGER">546</Encoding>
+         <CodedCharSetId iib:valueType="INTEGER">1208</CodedCharSetId>
+         <Transactional iib:valueType="BOOLEAN">FALSE</Transactional>
+         <Persistence iib:valueType="BOOLEAN">FALSE</Persistence>
+         <CreationTime iib:valueType="GMTTIMESTAMP">2022-06-17 20:34:18.238</CreationTime>
+         <ExpirationTime iib:valueType="INTEGER">-1</ExpirationTime>
+         <Priority iib:valueType="INTEGER">0</Priority>
+         <ReplyIdentifier iib:valueType="BLOB"/>
+         <ReplyProtocol iib:valueType="CHARACTER">SOAP-HTTP</ReplyProtocol>
+         <Topic iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <ContentType iib:valueType="CHARACTER">text/plain; charset=utf-8</ContentType>
+         <IdentitySourceType iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentitySourceToken iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentitySourcePassword iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentitySourceIssuedBy iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedType iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedToken iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedPassword iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedIssuedBy iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+      </Properties>
+      <HTTPReplyHeader iib:parser="WSREPHDR">
+      <X-Test-Header iib:valueType="CHARACTER">FlowData</X-Test-Header>
+      </HTTPReplyHeader>
+      <JSON iib:parser="json">
+         <Data>
+            <reply iib:valueType="CHARACTER">computeNode</reply>
+         </Data>
+      </JSON>
+   </message>
+</MessageAssembly>
