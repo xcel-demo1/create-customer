@@ -75,7 +75,7 @@ public class CreateCustomerPostCreateCustomerJsonToSoapTest {
 			String expectedOutputData = null;
 
 			// Get the TestMessageAssembly object for the actual propagated message
-			actualMessageAssembly = nodeSpy.propagatedMessageAssembly("out", 12);
+			actualMessageAssembly = nodeSpy.propagatedMessageAssembly("out", 1);
 
 			// Assert output message body data
 			// Get the string containing the actual data that was propagated from the node
