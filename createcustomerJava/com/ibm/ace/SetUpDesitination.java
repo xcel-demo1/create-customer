@@ -57,7 +57,7 @@ public class SetUpDesitination extends MbJavaComputeNode {
 					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "WebServiceURL", soapEndpoint);
 
 			outAssembly = new MbMessageAssembly(inAssembly, newEnv, inAssembly.getExceptionList(),
-					inAssembly.getMessage());
+					inAssembly.getMessage()); 
 
 			// End of user code
 			// ----------------------------------------------------------
