@@ -45,15 +45,16 @@ public class SetUpDesitination extends MbJavaComputeNode {
 			// Note that getPolicy method does not need to reference the policy project in
 			// this case
 			MbPolicy myPol = getPolicy("UserDefined", "backendurl");
-
+			String soapEndpoint = "dummy";
+			if (myPol != null) {
+				soapEndpoint = myPol.getPropertyValueAsString("soapEndpoint");
+			}
 			newEnv.getRootElement().createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "Destination", null)
 					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "SOAP", null)
 					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "Request", null)
 					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "Transport", null)
 					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "HTTP", null)
-
-					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "WebServiceURL",
-							myPol.getPropertyValueAsString("soapEndpoint"));
+					.createElementAsFirstChild(MbElement.TYPE_NAME_VALUE, "WebServiceURL", soapEndpoint);
 
 			outAssembly = new MbMessageAssembly(inAssembly, newEnv, inAssembly.getExceptionList(),
 					inAssembly.getMessage());
