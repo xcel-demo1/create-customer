@@ -45,7 +45,7 @@ public class SetUpDesitination extends MbJavaComputeNode {
 			// Note that getPolicy method does not need to reference the policy project in
 			// this case
 			MbPolicy myPol = getPolicy("UserDefined", "backendurl");
-			String soapEndpoint = "broke";
+			String soapEndpoint = "dummy";
 			if (myPol != null) {
 				soapEndpoint = myPol.getPropertyValueAsString("soapEndpoint");
 			}
