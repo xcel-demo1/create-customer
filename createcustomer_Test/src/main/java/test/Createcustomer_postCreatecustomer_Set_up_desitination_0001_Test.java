@@ -70,7 +70,7 @@ public class Createcustomer_postCreatecustomer_Set_up_desitination_0001_Test {
 		actualMessageAssembly = nodeSpy.propagatedMessageAssembly("out", 1);
 
 		// Assert output message body data
-        assertEquals("broken", actualMessageAssembly.localEnvironmentPath("Destination.SOAP.Request.Transport.HTTP.WebServiceURL").getStringValue());
+        assertEquals("dummy", actualMessageAssembly.localEnvironmentPath("Destination.SOAP.Request.Transport.HTTP.WebServiceURL").getStringValue());
 
 	}
 
